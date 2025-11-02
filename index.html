@@ -1,0 +1,447 @@
+<!--index.html-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#667eea">
+  <meta name="description" content="Bharath Thimmappa - Machine Learning & Cybersecurity Portfolio">
+  <meta name="author" content="Bharath Thimmappa">
+  <title>My Portfolio</title>
+
+  <!-- Preconnect to external domains for faster loading -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- DNS prefetch for Google Drive -->
+  <link rel="dns-prefetch" href="//drive.google.com">
+
+  <!-- Bootstrap CSS - moved to head for critical rendering -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- AOS CSS - async loading -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- Font Awesome - async loading -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+
+  <!-- Custom CSS - inline critical styles for above-the-fold content -->
+  <style>
+    /* Critical CSS for above-the-fold content */
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .loading { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; justify-content: center; align-items: center; z-index: 9999; }
+    .spinner { width: 50px; height: 50px; border: 3px solid rgba(255,255,255,0.3); border-top: 3px solid white; border-radius: 50%; animation: rotate 0.8s linear infinite; }
+    @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  </style>
+  <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="80" tabindex="0">
+  <!-- Loading Screen -->
+  <div class="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">BHARATH THIMMAPPA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#career">Career Objective</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#internships">Internships</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Technical Skills</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CAREER OBJECTIVE -->
+  <header id="career" class="pt-5 parallax slow" data-section="career">
+    <div class="container mt-5 pt-5">
+      <div class="bg-light rounded-3 p-4 shadow-lg glass" data-aos="fade-down">
+        <h1 class="display-6 fw-bold">Career Objective</h1>
+        <p class="lead mb-0" id="career-objective"></p>
+      </div>
+    </div>
+  </header>
+
+  <!-- EDUCATION -->
+  <section id="education" class="py-5" data-section="education">
+    <div class="container">
+      <h2 class="mb-4" data-aos="fade-up">Education</h2>
+      <div class="row g-4" id="education-container">
+        <!-- Education cards will be populated dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="py-5 bg-light" data-section="certifications">
+    <div class="container">
+      <h2 class="gradient-text" data-aos="fade-up">Certifications</h2>
+      <p data-aos="fade-up" data-aos-delay="80">Click any category to view certificate details</p>
+
+      <div class="d-flex gap-3 mb-4" data-aos="fade-right">
+        <a class="btn btn-outline-success" href="https://drive.google.com/drive/folders/1bhSNYhnsPxwURn1Hi39wfJ9YtfdPVGbm" target="_blank" rel="noopener">Course Certificates</a>
+        <a class="btn btn-outline-warning" href="https://drive.google.com/drive/folders/1EcFeZLFMs10sptlT6xpR9BSqqJ4-1N4w" target="_blank" rel="noopener">Extra Curricular Certificates</a>
+        <a class="btn btn-outline-info" href="https://drive.google.com/drive/folders/1ABAAZV_TPjbcxGXcP7xTYaIhjqOoz2VF" target="_blank" rel="noopener">Internship Certificates</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNSHIPS -->
+  <section id="internships" class="py-5" data-section="internships">
+    <div class="container">
+      <h2 class="gradient-text" data-aos="fade-up">Internships</h2>
+      <div class="row g-4" id="internships-container">
+        <!-- Internship cards will be populated dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-5 bg-light" data-section="projects">
+    <div class="container">
+      <h2 class="gradient-text" data-aos="fade-up">Projects</h2>
+      <div class="row g-4 mt-2" id="projects-container">
+        <!-- Project cards will be populated dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section id="skills" class="py-5" data-section="skills">
+    <div class="container">
+      <h2 class="gradient-text" data-aos="fade-up">Technical Skills</h2>
+      <div class="row g-3 mt-3" id="skills-container">
+        <!-- Skill cards will be populated dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-primary text-white py-3 mt-4">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>© <span id="year"></span> BHARATH THIMMAPPA </div>
+      <div>
+        <a href="https://www.linkedin.com/in/bharath-thimmappa/" target="_blank" rel="noopener" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+        <a href="https://github.com/MR-BHARATH-T" target="_blank" rel="noopener" class="text-white"><i class="fab fa-github fa-lg"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALS: Marks Cards -->
+  <div class="modal fade" id="marksSSLC" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">SSLC Marks Card</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Replace with embedded image/pdf or link -->
+          <p>Placeholder for SSLC marks card. Replace with image or PDF embed.</p>
+          <a href="#" class="btn btn-primary" target="_blank">Open Marks Card</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="marksPUC" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">PUC Marks Card</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Placeholder for PUC marks card.</p>
+          <a href="#" class="btn btn-primary" target="_blank">Open Marks Card</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="marksUG" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">UG Marks Card</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Placeholder for UG marks card.</p>
+          <a href="#" class="btn btn-primary" target="_blank">Open Marks Card</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="marksPG" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">PG Marks Card</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Placeholder for PG marks card.</p>
+          <a href="#" class="btn btn-primary" target="_blank">Open Marks Card</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALS: Certificates -->
+  <div class="modal fade" id="certCourse" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Course Certificate</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+                  <p><strong>Course:</strong> Course Certificates</p>
+                  <p><strong>Provider:</strong> Coursera / Example</p>
+                  <a href="https://drive.google.com/drive/folders/1bhSNYhnsPxwURn1Hi39wfJ9YtfdPVGbm" class="btn btn-primary" target="_blank" rel="noopener">View Certificate</a>
+                </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="certExtra" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Extra Curricular Certificate</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+                  <p><strong>Event:</strong> Extra Curricular Certificates</p>
+                  <p><strong>Host:</strong> TechFest</p>
+                  <a href="https://drive.google.com/drive/folders/1EcFeZLFMs10sptlT6xpR9BSqqJ4-1N4w" class="btn btn-primary" target="_blank" rel="noopener">View Certificate</a>
+                </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="certOther" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Internship Certificates</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+                  <p>Other certificate details here.</p>
+                  <a href="https://drive.google.com/drive/folders/1ABAAZV_TPjbcxGXcP7xTYaIhjqOoz2VF" class="btn btn-primary" target="_blank" rel="noopener">View Certificate</a>
+                </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALS: Internship certs & Project details -->
+  
+  <!--Internship Certificates-->
+  <div class="modal fade" id="certIntern1" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">Internship Certificate - Cybersecurity Intern</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body"><iframe src="https://drive.google.com/file/d/1apOUW2WROPWxfP7dvnC0kRhZB74J-Whd/preview" width="100%" height="600px" frameborder="0"></iframe><a class="btn btn-primary" href="https://drive.google.com/file/d/1apOUW2WROPWxfP7dvnC0kRhZB74J-Whd/view?usp=sharing" target="_blank">View Certificate</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="certIntern2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">Internship Certificate - ML Intern</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body"><iframe src="https://drive.google.com/file/d/1qH7B4_bQafGORFJa1U61q8RtKdUmg-wl/preview" width="100%" height="600px" frameborder="0" allowfullscreen></iframe><a class="btn btn-primary" href="https://drive.google.com/file/d/1qH7B4_bQafGORFJa1U61q8RtKdUmg-wl/view?usp=sharing" target="_blank">View Certificate</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="certIntern3" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">Internship Certificate - AI & Data Analyst Intern</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body"><iframe src="https://drive.google.com/file/d/1T4FDCinYWe9rmoaos5QVE6nSfZHDJwF7/preview" width="100%" height="600px" frameborder="0" allowfullscreen></iframe><a class="btn btn-primary" href="https://drive.google.com/file/d/1T4FDCinYWe9rmoaos5QVE6nSfZHDJwF7/view?usp=sharing" target="_blank">View Certificate</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="certIntern4" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">Internship Certificate - ML</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body"><iframe src="#" width="100%" height="600px" frameborder="0" allowfullscreen></iframe><a class="btn btn-primary" href="#" target="_blank">View Certificate</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="certIntern5" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">Internship Certificate - ML</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body"><iframe src="https://drive.google.com/file/d/1Vs1CRNTJTv8eqb1zS0ew6RRnNksmiPc3/preview" width="100%" height="600px" frameborder="0" allowfullscreen></iframe><a class="btn btn-primary" href="https://drive.google.com/file/d/1Vs1CRNTJTv8eqb1zS0ew6RRnNksmiPc3/view?usp=sharing" target="_blank">View Certificate</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="certIntern6" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">Internship Certificate - ML</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body"><iframe src="https://drive.google.com/file/d/1qH7B4_bQafGORFJa1U61q8RtKdUmg-wl/preview" width="100%" height="600px" frameborder="0" allowfullscreen></iframe><a class="btn btn-primary" href="https://drive.google.com/file/d/1qH7B4_bQafGORFJa1U61q8RtKdUmg-wl/view?usp=sharing" target="_blank">View Certificate</a></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Project Details-->
+
+  <div class="modal fade" id="project1Details" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title">College Event Handler - Details</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body">
+          <p><strong>GitHub Repository:</strong> <a href="https://github.com/MR-BHARATH-T/College-Event-Management" target="_blank" rel="noopener">https://github.com/MR-BHARATH-T/College-Event-Management</a></p>
+          <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Bootstrap 5, PHP, MySQL, XAMPP </p>
+          <p class="text-muted">
+            <h5> Project Overview </h5>
+            The College Event Management System is a web-based application developed for digitizing and streamlining the management of college events. 
+            It facilitates the organization of inter-college activities by providing a centralized, user-friendly, and efficient solution for event creation, scheduling, registration management, and publishing of reports and articles. 
+            The application allows admins, faculty, and students to interact with event-related operations from a responsive web interface, improving coordination and reducing manual workloads. Key functionalities include modules for user management, event handling, department creation, reporting, and article management, all accessible with secure access controls.
+
+            <br> <br>
+
+            <h5> Objectives: </h5>
+          
+            1. Automate and streamline scheduling, tracking, and reporting of college events.
+            <br>
+            2. Provide responsive dashboards for admins, teachers, and students.
+            <br>
+            3. Reduce inefficiencies, errors, and administrative burdens tied to manual processes.
+            <br>
+            4. Organize, publish, and archive event-related articles, reports, and resources.
+            <br> <br>
+
+            <h5> Notable Implementation Details: </h5>
+
+            <ul>
+  <li>
+    Multi-tier architecture separating presentation, application logic, and data management.
+  </li>
+  <li>
+    Modular codebase with dedicated modules:
+    <ul>
+      <li>Admin controls</li>
+      <li>Department management</li>
+      <li>Event management</li>
+      <li>Article management</li>
+      <li>Reports management</li>
+      <li>Secure user authentication</li>
+    </ul>
+  </li>
+  <li>
+    PHP classes for database connection and backend operations, following robust naming and code formatting conventions.
+  </li>
+  <li>
+    Security practices:
+    <ul>
+      <li>SQL injection prevention</li>
+      <li>Password hashing</li>
+      <li>Secure session management</li>
+    </ul>
+  </li>
+  <li>
+    Responsive interfaces with user role-based access and error messaging.
+  </li>
+  <li>
+    Agile development methodology for iterative delivery and adaptation to feedback.
+  </li>
+</ul>
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="project2Details" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header"><h5 class="modal-title"> Hide And Seek - Details</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body">
+          <p><strong>GitHub Repository:</strong> <a href="https://github.com/MR-BHARATH-T/HIDE-AND-SEEK" target="_blank" rel="noopener">https://github.com/MR-BHARATH-T/HIDE-AND-SEEK</a></p>
+          <p><strong>Tech Stack:</strong> Java (JDK 8+), Java Swing, MySQL (via JDBC), 	SHA-256 for password hashing; AES for encryption; SecureRandom for password/token generation, Custom LSB algorithm for PNG/BMP/GIF, Libraries (javax.crypto, java.sql, java.awt, javax.swing, java.imageio) </p>
+          <p class="text-muted">
+          <h2>Project Overview</h2>
+<p>
+  The HIDE AND SEEK Java application is a secure desktop platform that integrates user authentication, encryption, and steganography to protect sensitive digital information. Major features include:
+</p>
+<ul>
+  <li>
+    Secure login and registration with input validation, SHA-256 password hashing, and temporary password recovery.
+  </li>
+  <li>
+    Symmetric key encryption module for confidential text communication (AES-based).
+  </li>
+  <li>
+    LSB (Least Significant Bit) steganography for hiding encrypted text within images, ensuring hidden data remains protected even if the carrier is intercepted.
+  </li>
+  <li>
+    User-friendly Java Swing GUI with real-time validation, prompts, and progress indicators.
+  </li>
+  <li>
+    Password management with mandatory update on recovery, enforcing strong account security.
+  </li>
+</ul>
+<p>
+  This layered approach combines best practices in data confidentiality, integrity, and usability for sensitive digital communications.
+</p>
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Defer non-critical JavaScript -->
+  <script>
+    // Inline critical JavaScript for immediate execution
+    document.addEventListener('DOMContentLoaded', function() {
+      // Remove loading screen immediately when DOM is ready
+      const loading = document.querySelector('.loading');
+      if (loading) {
+        loading.style.transition = 'opacity 0.2s ease';
+        loading.style.opacity = '0';
+        setTimeout(() => loading.remove(), 200);
+      }
+    });
+
+    // Preload critical resources
+    const linkPreload = document.createElement('link');
+    linkPreload.rel = 'preload';
+    linkPreload.href = 'script.js';
+    linkPreload.as = 'script';
+    document.head.appendChild(linkPreload);
+  </script>
+
+  <!-- Load scripts asynchronously -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

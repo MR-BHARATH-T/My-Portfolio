@@ -1,0 +1,157 @@
+{
+  "personal": {
+    "name": "BHARATH THIMMAPPA",
+    "careerObjective": "A passionate fresher with a solid foundation in Machine Learning and Cybersecurity. Eager to contribute, collaborate with professionals, and grow in a dynamic IT environment. Looking for an entry-level role to apply skills and embrace new challenges."
+  },
+  "education": [
+    {
+      "level": "SSLC (Metric)",
+      "school": "SAV High School",
+      "location": "Bhadravthi, Shimoga, Karnataka",
+      "years": "2016 - 2019"
+    },
+    {
+      "level": "PUC (Intermediate)",
+      "school": "BGS Gurukula PU College",
+      "location": "Bhadravthi, Shimoga, Karnataka",
+      "years": "2019 - 2021"
+    },
+    {
+      "level": "UG (Bachelor's)",
+      "school": "National Degree College",
+      "location": "Basavanagudi, Bengaluru, Karnataka",
+      "years": "2021 - 2024"
+    },
+    {
+      "level": "PG (Master's)",
+      "school": "REVA University",
+      "location": "Yelahanka, Bengaluru, Karnataka",
+      "years": "2024 - 2026"
+    }
+  ],
+  "certifications": {
+    "courseCertificates": "https://drive.google.com/drive/folders/1bhSNYhnsPxwURn1Hi39wfJ9YtfdPVGbm",
+    "extraCurricular": "https://drive.google.com/drive/folders/1EcFeZLFMs10sptlT6xpR9BSqqJ4-1N4w",
+    "internshipCertificates": "https://drive.google.com/drive/folders/1ABAAZV_TPjbcxGXcP7xTYaIhjqOoz2VF"
+  },
+  "internships": [
+    {
+      "title": "Cybersecurity Intern",
+      "provider": "Edunet Collaboration with IBM SkillsBuild",
+      "duration": "Jan 2025 - Feb 2025",
+      "description": "Worked on building responsive web-based IMAGE STEGANOGRAPHY APPLICATION using Flask, OpenCV, and Python to securely hide and retrieve messages within images.",
+      "sourceCode": "https://github.com/MR-BHARATH-T/Steganography",
+      "certificate": "https://drive.google.com/file/d/1apOUW2WROPWxfP7dvnC0kRhZB74J-Whd/view?usp=sharing"
+    },
+    {
+      "title": "ML Intern",
+      "provider": "PANTECH E-LEARNING",
+      "duration": "Jan 2024 - March 2024",
+      "description": "Worked on an Image Segmentation Model to predict the objects in the Image. The code segments the image to identify blue regions, likely representing the duck, and draws bounding boxes around them.",
+      "sourceCode": "https://github.com/MR-BHARATH-T/IMAGE-SEGMENTATION",
+      "certificate": "https://drive.google.com/file/d/1qH7B4_bQafGORFJa1U61q8RtKdUmg-wl/view?usp=sharing"
+    },
+    {
+      "title": "AI & Data Analyst Intern",
+      "provider": "Edunet Collaboration with Shell",
+      "duration": "Dec 2024 - Jan 2025",
+      "description": "I worked on building an NLP-based intent classification model and integrating it with a Streamlit interface, gaining practical experience in end-to-end AI chatbot development.",
+      "sourceCode": "https://github.com/MR-BHARATH-T/Intents-Based-Chatbot",
+      "certificate": "https://drive.google.com/file/d/1T4FDCinYWe9rmoaos5QVE6nSfZHDJwF7/view?usp=sharing"
+    },
+    {
+      "title": "Frontend Web Developer Intern",
+      "provider": "Edunet Collaboration with IBM SkillsBuild",
+      "duration": "Aug 2025 - Sept 2025",
+      "description": "An intelligent web application that helps users discover amazing recipes using the Edamam Meal Planner API. Enter the ingredients you have, filter by meal type and calorie range, and instantly get delicious recipes tailored to your needs.",
+      "sourceCode": "https://github.com/MR-BHARATH-T/Interactive-Recipe-Finder",
+      "certificate": "#"
+    },
+    {
+      "title": "Python Developer Intern",
+      "provider": "Vault Of Codes",
+      "duration": "June 2025 - July 2025",
+      "description": "A modern, web-based expense tracker built with Streamlit. Easily track your daily expenses, view visual summaries, and manage your spending with user-friendly charts and dashboards.",
+      "sourceCode": "https://github.com/MR-BHARATH-T/Expense-Tracker",
+      "certificate": "https://drive.google.com/file/d/1Vs1CRNTJTv8eqb1zS0ew6RRnNksmiPc3/view?usp=sharing"
+    },
+    {
+      "title": "AI / ML Intern",
+      "provider": "Infosys SpringBoard",
+      "duration": "Sept 2025 - Nov 2025",
+      "description": "The AI AgroBot is an intelligent chatbot designed to assist farmers and agricultural enthusiasts by providing context-aware, multilingual guidance on farming practices such as crop management, soil health, fertilizer recommendations, and pest control.",
+      "sourceCode": "https://github.com/MR-BHARATH-T/InfosysSpringboard-Virtual_Internship",
+      "certificate": "https://drive.google.com/file/d/1qH7B4_bQafGORFJa1U61q8RtKdUmg-wl/view?usp=sharing"
+    }
+  ],
+  "projects": [
+    {
+      "title": "College Event Handler",
+      "skills": "HTML, CSS, JavaScript, Bootstrap 5, PHP, MySQL, XAMPP",
+      "description": "The College Event Management System is a web-based application developed for digitizing and streamlining the management of college events. It facilitates the organization of inter-college activities by providing a centralized, user-friendly, and efficient solution for event creation, scheduling, registration management, and publishing of reports and articles. The application allows admins, faculty, and students to interact with event-related operations from a responsive web interface, improving coordination and reducing manual workloads. Key functionalities include modules for user management, event handling, department creation, reporting, and article management, all accessible with secure access controls.",
+      "sourceCode": "https://github.com/MR-BHARATH-T/College-Event-Management",
+      "details": "College Event Handler - Details"
+    },
+    {
+      "title": "Hide And Seek",
+      "skills": "Java (JDK 8+), Java Swing, MySQL (via JDBC), SHA-256 for password hashing; AES for encryption; SecureRandom for password/token generation, Custom LSB algorithm for PNG/BMP/GIF, Libraries (javax.crypto, java.sql, java.awt, javax.swing, java.imageio)",
+      "description": "The HIDE AND SEEK Java application is a secure desktop platform that integrates user authentication, encryption, and steganography to protect sensitive digital information.",
+      "sourceCode": "https://github.com/MR-BHARATH-T/HIDE-AND-SEEK",
+      "details": "Hide And Seek - Details"
+    }
+  ],
+  "skills": [
+    {
+      "name": "HTML5",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+    },
+    {
+      "name": "CSS3",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+    },
+    {
+      "name": "SQL",
+      "icon": "https://unpkg.com/@tabler/icons@latest/icons/outline/database.svg"
+    },
+    {
+      "name": "AI / ML",
+      "icon": "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/brain.svg"
+    },
+    {
+      "name": "C Program",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
+    },
+    {
+      "name": "Python",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+    },
+    {
+      "name": "MySQL",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+    },
+    {
+      "name": "Cybersecurity",
+      "icon": "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/shield-check.svg"
+    },
+    {
+      "name": "GitHub",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+    },
+    {
+      "name": "Java",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+    },
+    {
+      "name": "Kali Linux",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kalilinux/kalilinux-original.svg"
+    }
+  ],
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/bharath-thimmappa/",
+    "github": "https://github.com/MR-BHARATH-T"
+  }
+}
