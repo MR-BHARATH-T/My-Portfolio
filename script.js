@@ -97,7 +97,7 @@ async function loadPortfolioData() {
           "duration": "Sept 2025 - Nov 2025",
           "description": "The AI AgroBot is an intelligent chatbot designed to assist farmers and agricultural enthusiasts by providing context-aware, multilingual guidance on farming practices such as crop management, soil health, fertilizer recommendations, and pest control.",
           "sourceCode": "https://github.com/MR-BHARATH-T/InfosysSpringboard-Virtual_Internship",
-          "certificate": "https://drive.google.com/file/d/1qH7B4_bQafGORFJa1U61q8RtKdUmg-wl/preview"
+          "certificate": "#"
         }
       ],
       "projects": [
