@@ -23,13 +23,13 @@ async function loadPortfolioData() {
         {
           "level": "SSLC (Metric)",
           "school": "SAV High School",
-          "location": "Bhadravthi, Shimoga, Karnataka",
+          "location": "Bhadravathi, Shimoga, Karnataka",
           "years": "2016 - 2019"
         },
         {
           "level": "PUC (Intermediate)",
           "school": "BGS Gurukula PU College",
-          "location": "Bhadravthi, Shimoga, Karnataka",
+          "location": "Bhadravathi, Shimoga, Karnataka",
           "years": "2019 - 2021"
         },
         {
@@ -81,7 +81,7 @@ async function loadPortfolioData() {
           "duration": "Aug 2025 - Sept 2025",
           "description": "An intelligent web application that helps users discover amazing recipes using the Edamam Meal Planner API. Enter the ingredients you have, filter by meal type and calorie range, and instantly get delicious recipes tailored to your needs.",
           "sourceCode": "https://github.com/MR-BHARATH-T/Interactive-Recipe-Finder",
-          "certificate": "#"
+          "certificate": "https://drive.google.com/file/d/1XS_6lylW2yjk-CqhVTepuBhCUB7JX8Js/preview"
         },
         {
           "title": "Python Developer Intern",
@@ -154,8 +154,8 @@ async function loadPortfolioData() {
           "icon": "https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/shield-check.svg"
         },
         {
-          "name": "GitHub",
-          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+          "name": "Git",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
         },
         {
           "name": "Java",
@@ -621,5 +621,277 @@ function handleScroll() {
 
 // Use passive scroll listener for better performance
 window.addEventListener('scroll', handleScroll, { passive: true });
+
+// ===== DARK MODE TOGGLE FUNCTIONALITY =====
+/**
+ * Dark Mode Toggle Functionality
+ * Handles smooth transitions, localStorage, and UI updates
+ */
+class DarkModeToggle {
+  constructor() {
+    this.isDark = false;
+    this.toggleButton = document.getElementById('darkModeToggle');
+    this.icon = document.getElementById('darkModeIcon');
+    this.body = document.body;
+    
+    this.init();
+  }
+
+  init() {
+    // Load saved preference or detect system preference
+    this.loadSavedPreference();
+    
+    // Set up event listener
+    if (this.toggleButton) {
+      this.toggleButton.addEventListener('click', () => this.toggle());
+    }
+
+    // Add keyboard support
+    if (this.toggleButton) {
+      this.toggleButton.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.toggle();
+        }
+      });
+    }
+
+    // Add hover effects for the toggle button
+    this.addButtonEffects();
+  }
+
+  loadSavedPreference() {
+    // Check localStorage first
+    const savedPreference = localStorage.getItem('darkMode');
+    
+    if (savedPreference !== null) {
+      this.isDark = savedPreference === 'true';
+    } else {
+      // If no saved preference, check system preference
+      this.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    // Apply the preference and update UI immediately
+    this.applyMode();
+    this.updateUI();
+  }
+
+  toggle() {
+    this.isDark = !this.isDark;
+    this.applyMode();
+    this.savePreference();
+    this.updateUI();
+    
+    // Add a subtle animation class
+    this.body.style.transition = 'all 0.3s ease';
+    
+    // Remove transition after animation completes
+    setTimeout(() => {
+      this.body.style.transition = '';
+    }, 300);
+  }
+
+  applyMode() {
+    if (this.isDark) {
+      this.body.classList.add('dark-mode');
+    } else {
+      this.body.classList.remove('dark-mode');
+    }
+  }
+
+  savePreference() {
+    localStorage.setItem('darkMode', this.isDark.toString());
+  }
+
+  updateUI() {
+    if (this.icon) {
+      // Smooth icon transition
+      this.icon.style.transform = 'rotate(180deg) scale(0)';
+      
+      setTimeout(() => {
+        // Change icon
+        this.icon.className = this.isDark ? 'fas fa-sun' : 'fas fa-moon';
+        this.icon.style.transform = 'rotate(0deg) scale(1)';
+      }, 150);
+    }
+
+    // Update button title for accessibility
+    if (this.toggleButton) {
+      this.toggleButton.title = this.isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+    }
+
+    // Add visual feedback
+    this.addVisualFeedback();
+  }
+
+  addButtonEffects() {
+    if (!this.toggleButton) return;
+
+    this.toggleButton.addEventListener('mouseenter', () => {
+      this.toggleButton.style.transform = 'scale(1.1)';
+      this.toggleButton.style.backgroundColor = this.isDark ?
+        'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+    });
+
+    this.toggleButton.addEventListener('mouseleave', () => {
+      this.toggleButton.style.transform = 'scale(1)';
+      this.toggleButton.style.backgroundColor = 'transparent';
+    });
+
+    this.toggleButton.addEventListener('mousedown', () => {
+      this.toggleButton.style.transform = 'scale(0.95)';
+    });
+
+    this.toggleButton.addEventListener('mouseup', () => {
+      this.toggleButton.style.transform = 'scale(1.1)';
+    });
+  }
+
+  addVisualFeedback() {
+    // Create a subtle ripple effect
+    const ripple = document.createElement('div');
+    ripple.style.position = 'fixed';
+    ripple.style.top = '50%';
+    ripple.style.left = '50%';
+    ripple.style.width = '0';
+    ripple.style.height = '0';
+    ripple.style.background = this.isDark ?
+      'radial-gradient(circle, rgba(76, 81, 191, 0.3) 0%, transparent 70%)' :
+      'radial-gradient(circle, rgba(102, 126, 234, 0.3) 0%, transparent 70%)';
+    ripple.style.borderRadius = '50%';
+    ripple.style.transform = 'translate(-50%, -50%)';
+    ripple.style.pointerEvents = 'none';
+    ripple.style.zIndex = '9999';
+    ripple.style.transition = 'all 0.6s ease';
+
+    document.body.appendChild(ripple);
+
+    // Animate the ripple
+    setTimeout(() => {
+      ripple.style.width = '100vmax';
+      ripple.style.height = '100vmax';
+    }, 10);
+
+    // Remove ripple after animation
+    setTimeout(() => {
+      ripple.remove();
+    }, 600);
+  }
+
+  // Public method to programmatically set mode
+  setMode(isDark) {
+    this.isDark = isDark;
+    this.applyMode();
+    this.savePreference();
+    this.updateUI();
+  }
+
+  // Public method to get current mode
+  getMode() {
+    return this.isDark;
+  }
+}
+
+// Initialize dark mode toggle when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  // Wait a bit for other scripts to load
+  setTimeout(() => {
+    window.darkModeToggle = new DarkModeToggle();
+  }, 100);
+});
+
+// Listen for system preference changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+  const savedPreference = localStorage.getItem('darkMode');
+  if (savedPreference === null) {
+    // User hasn't set a manual preference, follow system
+    if (window.darkModeToggle) {
+      window.darkModeToggle.setMode(e.matches);
+    }
+  }
+});
+
+// ===== MODAL THEME FIXES =====
+document.addEventListener('DOMContentLoaded', function() {
+  // Fix modal backdrop and ensure proper theming
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'childList') {
+        // Check for new modals being added
+        mutation.addedNodes.forEach((node) => {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            const modal = node.classList?.contains('modal') ? node : node.querySelector?.('.modal');
+            if (modal) {
+              fixModalTheme(modal);
+            }
+          }
+        });
+      }
+    });
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+
+  // Also fix existing modals
+  document.querySelectorAll('.modal').forEach(modal => {
+    fixModalTheme(modal);
+  });
+});
+
+function fixModalTheme(modal) {
+  if (!modal) return;
+  
+  // Add dark mode class to modal content if body has dark mode
+  const modalContent = modal.querySelector('.modal-content');
+  if (modalContent && document.body.classList.contains('dark-mode')) {
+    modalContent.style.background = 'linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.9) 100%)';
+    modalContent.style.color = 'var(--text-primary)';
+  } else if (modalContent) {
+    // Reset to default when not in dark mode
+    modalContent.style.background = '';
+    modalContent.style.color = '';
+  }
+
+  // Fix modal header
+  const modalHeader = modal.querySelector('.modal-header');
+  if (modalHeader && document.body.classList.contains('dark-mode')) {
+    modalHeader.style.background = 'linear-gradient(135deg, rgba(76, 81, 191, 0.1) 0%, rgba(90, 79, 207, 0.1) 100%)';
+    modalHeader.style.borderBottom = '1px solid var(--glass-border)';
+  } else if (modalHeader) {
+    modalHeader.style.background = '';
+    modalHeader.style.borderBottom = '';
+  }
+
+  // Fix modal body
+  const modalBody = modal.querySelector('.modal-body');
+  if (modalBody && document.body.classList.contains('dark-mode')) {
+    modalBody.style.background = 'linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.8) 100%)';
+    modalBody.style.color = 'var(--text-primary)';
+  } else if (modalBody) {
+    modalBody.style.background = '';
+    modalBody.style.color = '';
+  }
+
+  // Fix close button
+  const closeBtn = modal.querySelector('.btn-close');
+  if (closeBtn && document.body.classList.contains('dark-mode')) {
+    closeBtn.style.background = 'rgba(255, 255, 255, 0.1)';
+    closeBtn.style.borderRadius = '50%';
+    closeBtn.style.opacity = '0.8';
+  } else if (closeBtn) {
+    closeBtn.style.background = '';
+    closeBtn.style.borderRadius = '';
+    closeBtn.style.opacity = '';
+  }
+}
+
+// Listen for modal show events to apply theme
+document.addEventListener('show.bs.modal', function (event) {
+  const modal = event.target;
+  setTimeout(() => fixModalTheme(modal), 100); // Small delay to ensure modal is fully rendered
+});
 
 // Optional: keyboard accessibility - close modals with Escape is default by bootstrap

@@ -14,6 +14,26 @@
   --blur-glass: blur(10px);
   --transition-fast: 0.2s ease;
   --transition-smooth: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  /* Dark Mode Color Variables */
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-tertiary: #1a1a2e;
+  --bg-surface: #16213e;
+  --text-primary: #e8e9f4;
+  --text-secondary: #b8b9c5;
+  --text-muted: #8c8e99;
+  --accent-hover: #5a6fd8;
+  --accent-light: #818cf8;
+  --accent-glow: rgba(102, 126, 234, 0.4);
+  --gradient-primary-dark: linear-gradient(135deg, #4c51bf 0%, #5a4fcf 50%, #764ba2 100%);
+  --gradient-secondary-dark: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-glass-dark: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+  --shadow-glow-intense: 0 0 30px rgba(102,126,234,0.5);
+  --glass-bg: rgba(22, 33, 62, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --particle-color: rgba(102, 126, 234, 0.15);
+  --particle-glow: rgba(102, 126, 234, 0.05);
 }
 
 /* offset body so fixed navbar doesn't cover content */
@@ -933,4 +953,321 @@ footer::before {
 footer > * {
   position: relative;
   z-index: 2;
+}
+
+/* ===== DARK MODE CSS OVERRIDES ===== */
+.dark-mode {
+  /* Body Background */
+  background:
+    radial-gradient(circle at 20% 50%, rgba(76, 81, 191, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(90, 79, 207, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%),
+    linear-gradient(180deg, #0a0a0f 0%, #12121a 50%, #1a1a2e 100%) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Dark mode body overlay */
+.dark-mode::before {
+  background:
+    radial-gradient(circle at 30% 40%, rgba(76, 81, 191, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(90, 79, 207, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 90%, rgba(102, 126, 234, 0.06) 0%, transparent 50%) !important;
+}
+
+/* Section backgrounds in dark mode */
+.dark-mode section:nth-child(even) {
+  background:
+    linear-gradient(135deg, rgba(18, 18, 26, 0.9) 0%, rgba(26, 26, 46, 0.8) 100%),
+    radial-gradient(circle at 30% 70%, rgba(76, 81, 191, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(90, 79, 207, 0.06) 0%, transparent 50%) !important;
+}
+
+.dark-mode section:nth-child(even)::before {
+  background:
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.03)"/><circle cx="10" cy="50" r="0.5" fill="rgba(255,255,255,0.03)"/><circle cx="90" cy="50" r="0.5" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') !important;
+}
+
+/* Glassmorphism in dark mode */
+.dark-mode .glass {
+  background: var(--gradient-glass-dark) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Dark mode cards */
+.dark-mode .card {
+  background:
+    linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.9) 100%),
+    var(--gradient-glass-dark) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow:
+    var(--shadow-lg),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .card::before {
+  background:
+    linear-gradient(135deg, rgba(76, 81, 191, 0.1) 0%, rgba(90, 79, 207, 0.1) 100%),
+    var(--gradient-glass-dark) !important;
+}
+
+.dark-mode .card::after {
+  background: linear-gradient(135deg, rgba(76, 81, 191, 0.4), rgba(90, 79, 207, 0.4)) !important;
+}
+
+.dark-mode .card:hover {
+  transform: translateY(-15px) scale(1.03) !important;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(76, 81, 191, 0.3) !important;
+  border-color: rgba(76, 81, 191, 0.4) !important;
+}
+
+.dark-mode .card-body {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .card-title,
+.dark-mode .card-text {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .card-text.text-muted {
+  color: var(--text-secondary) !important;
+}
+
+/* Dark mode skill cards */
+.dark-mode .skill-card {
+  background:
+    linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.8) 100%),
+    var(--gradient-glass-dark) !important;
+  border: 1px solid var(--glass-border) !important;
+  color: var(--text-primary) !important;
+  box-shadow:
+    var(--shadow-md),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark-mode .skill-card::before {
+  background: var(--gradient-primary-dark) !important;
+}
+
+.dark-mode .skill-card:hover {
+  transform: translateY(-10px) scale(1.05) !important;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(76, 81, 191, 0.3) !important;
+  border-color: rgba(76, 81, 191, 0.4) !important;
+}
+
+.dark-mode .skill-card > * {
+  color: var(--text-primary) !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .skill-card:hover > * {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Dark mode navbar */
+.dark-mode .navbar {
+  background: var(--gradient-primary-dark) !important;
+  box-shadow: var(--shadow-xl) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-mode .navbar.scrolled {
+  background: rgba(18, 18, 26, 0.95) !important;
+  backdrop-filter: var(--blur-glass) !important;
+  -webkit-backdrop-filter: var(--blur-glass) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.dark-mode .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.dark-mode .nav-link:hover {
+  color: white !important;
+}
+
+/* Dark mode section headers */
+.dark-mode section h2 {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode section h2::after {
+  background: var(--gradient-primary-dark) !important;
+}
+
+/* Dark mode header */
+.dark-mode header .bg-light {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(22, 33, 62, 0.6) 100%) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow:
+    var(--shadow-xl),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-mode header h1 {
+  background: linear-gradient(135deg, #e8e9f4, #b8b9c5) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode header p {
+  background: linear-gradient(135deg, #b8b9c5, #8c8e99) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Dark mode particles */
+.dark-mode .particle {
+  background: var(--particle-color) !important;
+  box-shadow: 0 0 6px var(--particle-glow) !important;
+}
+
+/* Dark mode footer */
+.dark-mode footer {
+  background: var(--gradient-primary-dark) !important;
+}
+
+.dark-mode footer::before {
+  background:
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.04) 0%, transparent 50%) !important;
+}
+
+/* Smooth transitions for dark mode */
+.dark-mode,
+.dark-mode *,
+.dark-mode *::before,
+.dark-mode *::after {
+  transition: all 0.3s ease !important;
+}
+
+/* Dark mode text colors */
+.dark-mode p,
+.dark-mode li,
+.dark-mode span:not(.btn):not(.badge) {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .text-muted {
+  color: var(--text-secondary) !important;
+}
+
+/* Dark mode buttons */
+.dark-mode .btn-outline-primary {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+.dark-mode .btn-outline-primary:hover {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: white !important;
+}
+
+/* Gradient text in dark mode */
+.dark-mode .gradient-text {
+  background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #c084fc 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  animation: shimmer 3s ease-in-out infinite !important;
+  background-size: 200% 200% !important;
+}
+
+/* ===== MODAL DARK MODE FIXES ===== */
+.dark-mode .modal-content {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.9) 100%) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(76, 81, 191, 0.2) !important;
+}
+
+.dark-mode .modal-header {
+  border-bottom: 1px solid var(--glass-border) !important;
+  background: linear-gradient(135deg, rgba(76, 81, 191, 0.1) 0%, rgba(90, 79, 207, 0.1) 100%) !important;
+}
+
+.dark-mode .modal-header .modal-title {
+  color: var(--text-primary) !important;
+  background: linear-gradient(135deg, #e8e9f4, #b8b9c5) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.dark-mode .modal-body {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.8) 100%) !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .modal-body p {
+  color: var(--text-primary) !important;
+}
+
+.dark-mode .modal-body .text-muted {
+  color: var(--text-secondary) !important;
+}
+
+.dark-mode .modal-body a {
+  color: var(--accent-light) !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .modal-body a:hover {
+  color: var(--accent) !important;
+  text-decoration: underline;
+}
+
+.dark-mode .modal-footer {
+  border-top: 1px solid var(--glass-border) !important;
+  background: linear-gradient(135deg, rgba(76, 81, 191, 0.05) 0%, rgba(90, 79, 207, 0.05) 100%) !important;
+}
+
+.dark-mode .btn-close {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 50% !important;
+  transition: all 0.3s ease !important;
+}
+
+.dark-mode .btn-close:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: scale(1.1) !important;
+}
+
+.dark-mode .btn-close::before {
+  color: var(--text-primary) !important;
+  font-size: 1.2rem !important;
+}
+
+/* Enhanced backdrop for dark mode */
+.dark-mode .modal-backdrop {
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(5px) !important;
+  -webkit-backdrop-filter: blur(5px) !important;
+}
+
+/* Stronger close button visibility in dark mode */
+.dark-mode .btn-close {
+  opacity: 0.8 !important;
+  filter: none !important;
+}
+
+.dark-mode .btn-close:hover {
+  opacity: 1 !important;
+  background: rgba(255, 255, 255, 0.2) !important;
 }
